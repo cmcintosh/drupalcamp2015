@@ -8,3 +8,10 @@ drupal-8/themes
 drupal-8/vendor
 drupal-8/.*
 drupal-8/*.*
+drupal-8/modules/address
+drupal-8/modules/commerce
+drupal-8/modules/composer_manager
+drupal-8/modules/devel
+drupal-8/modules/examples
+drupal-8/modules/headless
+drupal-8/modules/inline_entity_form
