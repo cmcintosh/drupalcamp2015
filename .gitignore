@@ -1,5 +1,10 @@
 server/node_modules
 server/public_html/.sass-cache
 server/public_html/.DS_Store
-drupal-8/*
-~drupal-8/modules/demo
+drupal-8/core
+drupal-8/profiles
+drupal-8/sites
+drupal-8/themes
+drupal-8/vendor
+drupal-8/.*
+drupal-8/*.*
