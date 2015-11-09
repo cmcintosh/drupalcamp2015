@@ -1,0 +1,34 @@
+#tracker {
+  @extend .container;
+  margin-top: 20px;
+
+  .Setp {
+    font-size: 32px;
+  }
+
+  ul {
+    @extend .col-md-12;
+    height: 70px;
+    margin: 0 auto;
+    clear: both;
+    border-radius: 10px;
+    position: relative;
+    background-color: #1e70a6;
+    box-shadow: inset -1px 3px 8px rgba(0,0,0,0.5);
+    overflow:hidden;
+
+    li {
+      float:left;
+      width:20%;
+      padding:20px;
+      color:#fff;
+      text-align: center;
+
+      &.active {
+        background:red;
+        color:#000;
+      }
+
+    }
+  }
+}

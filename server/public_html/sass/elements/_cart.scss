@@ -1,0 +1,21 @@
+#cart {
+  @extend .container;
+  margin-top:50px;
+  .item {
+    @extend .col-md-12;
+
+    img {
+      width: 75px !important;
+      height:75px !important;
+      margin-right: 15px;
+      float:left;
+    }
+
+  }
+
+  .btn {
+    margin-top:10px;
+    width:100%;
+    float:left;
+  }
+}

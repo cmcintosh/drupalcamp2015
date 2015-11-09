@@ -1,0 +1,43 @@
+div#user-login {
+    z-index: 9999;
+    position: absolute;
+    top: 50px;
+    border-radius: 10px;
+    border: solid 1px;
+    background: #fff;
+    padding: 20px;
+    width: 200px;
+
+    .form-item {
+      text-align:left;
+      font-size: 14px;
+      margin-bottom:5px;
+    }
+
+    button, a {
+      display:inline;
+      width:100%;
+    }
+}
+
+div#user-register {
+  position: absolute;
+  top:50px;
+  right:150px;
+  z-index:9999;
+  width:300px;
+  border-radius: 10px;
+  border: solid 1px;
+  background: #fff;
+  padding: 20px;
+
+  .form-item{
+    margin-bottom:5px;
+    float:left;
+    text-align: left;
+    width:100%;
+    input, button {
+      width:100%;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.order-list {
+  @extend .container;
+  margin-top:40px;
+  li {
+    width:100%;
+    float:left;
+    &.active {
+      background: yellow;
+    }
+
+    .status,
+    label {
+      float:left;
+      width: 200px;
+      display:inline;
+    }
+
+  }
+}
+
+.controls {
+  @extend .container;
+  > div {
+    float:left;
+    width: 64px;
+    height: 64px;
+    padding:10px;
+    margin-right: 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background-color: #1e70a6;
+    box-shadow: inset -1px 3px 8px rgba(0,0,0,0.5);
+    color:#fff;
+    i {
+      width:100%;
+      clear:both;
+      font-size: 30px;
+    }
+  }
+}

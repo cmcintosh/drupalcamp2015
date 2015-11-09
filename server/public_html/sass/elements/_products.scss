@@ -1,0 +1,27 @@
+.status {
+  @extend .container;
+  .item {
+    @extend .col-md-12;
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+}
+.category {
+  @extend .row;
+
+  .product_item {
+    @extend .col-md-3;
+    img {
+      width:100%;
+      height:125px !important;
+      margin-bottom:10px;
+    }
+    button {
+      width:100%;
+      float:left;
+    }
+    h3 {
+      font-size: 14px;
+    }
+  }
+}

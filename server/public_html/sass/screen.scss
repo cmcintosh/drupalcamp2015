@@ -1,0 +1,51 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+@import "elements/_articles";
+@import "elements/_header";
+@import "elements/_welcome";
+@import "elements/_products";
+@import "elements/_cart";
+
+@import "elements/_storeDashboard";
+@import "elements/_tracker";
+
+section {
+  @extend .container;
+  padding-bottom:50px;
+}
+
+.navbar-default {
+  height:50px;;
+  overflow:visible;
+  position:relative;
+
+  .navbar-brand > img {
+    position: relative;
+    z-index: 9999;
+  }
+
+  .navbar-collapse {
+    position: relative;
+  }
+
+  ul#user-controls {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: auto;
+    text-align: right;
+
+    li a {
+      display: inline;
+    }
+  }
+
+}

@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Defines the Store entity type and common functions used by Commerce modules.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function commerce_theme() {
+  return [
+    'commerce_add_list' => [
+      'variables' => [
+        'bundles' => [],
+        'bundle_type' => NULL,
+        'form_route_name' => NULL
+      ],
+      'file' => 'commerce.pages.inc',
+      'template' => 'commerce-add-list',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_toolbar().
+ */
+function commerce_toolbar() {
+  $items = [];
+  $items['commerce'] = [
+    '#type' => 'toolbar_item',
+    '#attached' => [
+      'library' => [
+        'commerce/drupal.commerce.toolbar',
+      ],
+    ],
+  ];
+
+  return $items;
+}

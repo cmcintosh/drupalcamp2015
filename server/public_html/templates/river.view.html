@@ -1,0 +1,7 @@
+<article ng-repeat="blog in blogs track by $index" >
+  <h2>{{blog.title}}</h2>
+  <div class="summary" ng-bind-html="blog.body">
+
+  </div>
+  <a class="btn btn-info" href="#/blog/{{blog.nid}}">Read More</a>
+</article>

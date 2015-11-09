@@ -1,0 +1,5 @@
+server/node_modules
+server/public_html/.sass-cache
+server/public_html/.DS_Store
+drupal-8/*
+~drupal-8/modules/demo

@@ -1,0 +1,62 @@
+<html>
+
+<head>
+  <title>Welcome To DrupalCamp Cebu 2015</title>
+  <link rel="stylsheet" href="js/lib/bootstrap/css/bootstrap.css">
+  <link rel="stylsheet" href="js/lib/bootstrap/css/bootstrap-theme.css">
+  <link rel="stylsheet" href="js/lib/jquery.bxslider/jquery.bxslider.css">
+  <link rel="stylesheet" href="css/font-awesome/font-awesome.css">
+  <link rel="stylesheet" href="css/screen.css">
+  <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/ie.css">
+
+  <!-- Include library files -->
+  <script src="js/lib/jquery-1.11.3.min.js"></script>
+
+  <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/lib/angular/angular.min.js"></script>
+  <script src="js/lib/angular/angular-route.js"></script>
+  <script src="js/lib/angular/angular-sanitize.js"></script>
+  <script src="js/lib/angular/angular-cookies.js"></script>
+  <script src="js/lib/jquery.bxslider/jquery.bxslider.min.js"></script>
+
+
+  <script src="/socket.io/socket.io.js"></script>
+
+  <script src="js/app/shop.module.js"></script>
+  <script src="js/app/service/SocketIO.factory.js"></script>
+  <script src="js/app/controller/shopDashboard.controller.js"></script>
+
+</head>
+
+<body ng-app="BackOffice">
+  <script>
+
+  </script>
+  <div ng-controller="shopDashboard">
+    <div class="order-list">
+      <ul ng-if="orders.length > 0">
+        <li ng-repeat="order in orders track by $index"
+            ng-class="{active: ($index == selectedOrder)}"
+            ng-if="order.items !== undefined && order.status < 6"
+          >
+          <label>Order #{{$index}}</label>
+          <div class="status">{{order.status}}</div>
+        </li>
+      </ul>
+      <div ng-if="orders.length == 0">
+        <h3>No Pending Orders</h3>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="up"       ng-click="previousOrder()"> <i class="fa fa-hand-o-up"></i> Up</div>
+      <div class="down"     ng-click="nextOrder()"> <i class="fa fa-hand-o-down"></i> Down</div>
+      <div class="nextStep" ng-click="nextStep()"> <i class="fa fa-fighter-jet"></i> Next</div>
+      <div class="cancel"   ng-click="cancelOrder()"> <i class="fa fa-close"></i>Cancel</div>
+    </div>
+  </div>
+
+</body>
+
+</html>

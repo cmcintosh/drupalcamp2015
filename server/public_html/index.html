@@ -1,0 +1,124 @@
+<html>
+
+<head>
+  <title>Welcome To DrupalCamp Cebu 2015</title>
+  <link rel="stylsheet" href="js/lib/bootstrap/css/bootstrap.css">
+  <link rel="stylsheet" href="js/lib/bootstrap/css/bootstrap-theme.css">
+  <link rel="stylsheet" href="js/lib/jquery.bxslider/jquery.bxslider.css">
+  <link rel="stylesheet" href="css/font-awesome/font-awesome.css">
+  <link rel="stylesheet" href="css/screen.css">
+  <link rel="stylesheet" href="css/print.css">
+  <link rel="stylesheet" href="css/ie.css">
+
+  <!-- Include library files -->
+  <script src="js/lib/jquery-1.11.3.min.js"></script>
+
+  <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/lib/angular/angular.min.js"></script>
+  <script src="js/lib/angular/angular-route.js"></script>
+  <script src="js/lib/angular/angular-sanitize.js"></script>
+  <script src="js/lib/angular/angular-cookies.js"></script>
+  <script src="js/lib/jquery.bxslider/jquery.bxslider.min.js"></script>
+
+
+  <script src="/socket.io/socket.io.js"></script>
+
+  <!-- include app files -->
+  <script src="js/app/drupalCamp.module.js"></script>
+
+    <!-- services -->
+    <script src="js/app/service/Node.factory.js"></script>
+    <script src="js/app/service/Session.factory.js"></script>
+    <script src="js/app/service/Specials.factory.js"></script>
+    <script src="js/app/service/CTA.factory.js"></script>
+    <script src="js/app/service/Category.factory.js"></script>
+    <script src="js/app/service/Products.factory.js"></script>
+    <script src="js/app/service/Cart.factory.js"></script>
+    <script src="js/app/service/SocketIO.factory.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/app/controller/blogRiver.controller.js"></script>
+    <script src="js/app/controller/blogView.controller.js"></script>
+    <script src="js/app/controller/AppHeader.controller.js"></script>
+    <script src="js/app/controller/welcome.controller.js"></script>
+    <script src="js/app/controller/menu.controller.js"></script>
+    <script src="js/app/controller/shoppingCart.controller.js"></script>
+    <script src="js/app/controller/OrderTracker.controller.js"></script>
+
+    <!-- Directives -->
+    <script src="js/app/directive/drupalForm.directive.js"></script>
+    <script src="js/app/directive/navbarHeader.directive.js"></script>
+    <script src="js/app/directive/menuItem.directive.js"></script>
+
+    <script src="js/app/drupalCamp.routes.js"></script>
+</head>
+
+<body ng-app="DrupalCamp">
+
+<header>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div navbar-header class="navbar-header"></div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#/cart">Order Online</a></li>
+          <li><a href="#/menu">Menu</a></li>
+          <li><a href="#/tracker">Tracker</a></li>
+        </ul>
+
+        <ul id="user-controls" ng-controller="AppHeader" ng-if="session.data.uid == undefined" class="nav navbar-nav navbar-right">
+          <li>
+            <a ng-click="showLoginForm()">Sign In</a>
+            <div id="user-login" ng-if="showLogin == true">
+              <i ng-click="hideLoginForm()" class="fa fa-close"></i>
+              <div class="form-item">
+                <input ng-model="session.data.user" type="text" placeholder="Username">
+              </div>
+              <div class="form-item">
+                <input ng-model="session.data.pass" type="password" placeholder="Password">
+              </div>
+              <div class="form-item">
+                <button ng-click="loginUser()" class="btn btn-info">Login</button> <a name="forgot">Forgot Password?</a>
+              </div>
+            </div>
+          </li>
+          <li>Don't Have a Pizza Profile? <a ng-click="showRegistrationForm()">Create One</a>
+            <div id="user-register" ng-if="showRegistration == true">
+              <i ng-click="hideRegistrationForm()" class="fa fa-close"></i>
+              <div class="form-item">
+                <input type="text" placeholder="username">
+              </div>
+              <div class="form-item">
+                <input type="text" placeholder="email">
+              </div>
+              <div class="form-item">
+                <input type="password" placeholder="password">
+              </div>
+              <div class="form-item">
+                <input type="text" placeholder="Street Address">
+              </div>
+              <div class="form-item">
+                <input type="text" placeholder="Apartment #">
+              </div>
+              <div class="form-item">
+                <button class="btn btn-info">Register</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul id="user-controls" ng-controller="AppHeader" ng-if="!(session.data.uid == undefined)" class="nav navbar-nav navbar-right">
+          <li ng-repeat="link in user_actions">
+            <a ng-click="link.action">{{link.title}}</a>
+          </li>
+        </ul>
+
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</header>
+
+<section><div class="content" ng-view></div></section>
+<section id="footer-links"> </section>
+</body>
+
+</html>

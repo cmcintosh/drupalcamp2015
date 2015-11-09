@@ -1,0 +1,5 @@
+name: DrupalCamp 2015 Demo
+type: module
+description: 'A demonstration of a headless application.'
+package: Example modules
+core: 8.x

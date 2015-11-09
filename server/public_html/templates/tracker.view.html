@@ -1,0 +1,27 @@
+<div id="tracker">
+  <ul id="deliver_tracker" ng-if="order.status > -1 && order.status < 6">
+    <li id="stage_1" ng-class="{active: (order.status == 1)}">
+      <div class="label">Order Placed</div>
+      <div class="step">1</div>
+    </li>
+    <li id="stage_2" ng-class="{active: (order.status == 2)}">
+      <div class="label">Prep</div>
+      <div class="Step">2</div>
+    </li>
+    <li id="stage_3" ng-class="{active: (order.status == 3)}">
+      <div class="label">Bake</div>
+      <div class="Step">3</div>
+    </li>
+    <li id="stage_4" ng-class="{active: (order.status == 4)}">
+      <div class="label">Quality Check</div>
+      <div class="Step">4</div>
+    </li>
+    <li id="stage_5" ng-class="{active: (order.status == 5)}">
+      <div class="label">Out For Delivery</div>
+      <div class="Step">5</div>
+    </li>
+  </ul>
+  <div ng-if="order.status == -1">
+    Please <a href="#/cart">complete your order</a> to continue.
+  </div>
+</div>

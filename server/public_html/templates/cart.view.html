@@ -1,0 +1,15 @@
+<div id="cart">
+  <div class="status"> </div>
+  <div class="inner" ng-if="cart.data.items.length > 0">
+    <div class="item" ng-repeat="item in cart.data.items track by $index">
+      <div ng-bind-html="item.field_menu"></div>
+      <div class="title">{{item.title}}</div>
+    </div>
+    <button ng-click="checkout()" class="btn btn-info">Checkout</button>
+  </div>
+
+  <div class="inner" ng-if="cart.data.items.length == 0 && cart.data.orders == undefined">
+      Please add an item to the cart first.
+  </div>
+
+</div>

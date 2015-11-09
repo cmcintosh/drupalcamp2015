@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="status">
+    
+  </div>
+  <div class="category row" ng-repeat="category in categories">
+    <h2>{{category.name}}</h2>
+    <div class="col-md-12">
+      <div class="product_item" ng-repeat="item in products | limitTo: 10" ng-if="item.field_category == category.tid">
+        <div ng-bind-html="item.field_menu"></div>
+        <button ng-click="addToCart(item)" class="btn btn-info">Order</button>
+        <h3 ng-bind-html="item.title"></h3>
+      </div>
+    </div>
+  </div>
+</div>

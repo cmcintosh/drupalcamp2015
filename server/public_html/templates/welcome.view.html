@@ -1,0 +1,16 @@
+<div class="special-header">
+  <div class="left"
+       ng-bind-html="left_special.field_special_image">
+  </div>
+  <div class="right">
+    <div ng-repeat="special in right_specials"
+        ng-bind-html="special.field_special_image">
+    </div>
+  </div>
+</div>
+
+<div class="cta-slideshow">
+  <ul class="bxslider">
+    <li ng-repeat="slide in cta_slideshow" ng-bind-html="slide.field_slide"> </li>
+  </ul>
+</div>

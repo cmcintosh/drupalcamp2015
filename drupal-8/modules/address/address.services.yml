@@ -1,0 +1,21 @@
+services:
+  address.address_format_importer:
+    class: Drupal\address\AddressFormatImporter
+    arguments: ['@entity.manager', '@language_manager']
+
+  address.address_format_repository:
+    class: Drupal\address\Repository\AddressFormatRepository
+    arguments: ['@entity.manager', '@language_manager']
+
+  address.country_repository:
+    class: Drupal\address\Repository\CountryRepository
+    arguments: ['@cache.data', '@language_manager']
+
+  address.subdivision_repository:
+    class: Drupal\address\Repository\SubdivisionRepository
+    arguments: ['@cache.data', '@language_manager']
+
+  plugin.manager.address.zone_member:
+    class: Drupal\address\ZoneMemberManager
+    parent: default_plugin_manager
+    arguments: ['@uuid']

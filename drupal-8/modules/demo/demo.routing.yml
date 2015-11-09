@@ -1,0 +1,24 @@
+demo_remote_start_session:
+  path: '/demo/remote_start_session'
+  defaults:
+    _controller: '\Drupal\demo\Controller\RemoteSession::start'
+  requirements:
+    _permission: 'access content'
+
+demo_remote_end_session:
+  path: '/demo/remote_end_session'
+  defaults:
+    _controller: '\Drupal\demo\Controller\RemoteSession::end'
+  requirements:
+    _permission: 'access content'
+
+demo_remote_form_post:
+  path: '/demo/remote_form_post'
+  defaults:
+    _controller: '\Drupal\demo\Controller\RemoteSession::formPost'
+  requirements:
+    _permission: 'access content'
+demo_remote_user_access:
+  path: '/demo/remote_access'
+  defaults:
+    _controller : '\Drupal\demo\Controller\RemoteSession::hasAccess'

@@ -1,0 +1,32 @@
+.special-header {
+  @extend .row;
+  margin-bottom: 10px;
+  .left {
+    @extend .col-md-8;
+    img {
+      width:100%;
+      height: auto;
+    }
+  }
+
+  .right {
+    @extend .col-md-3;
+
+    img {
+      width:90%;
+      height: auto;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.cta-slideshow {
+  @extend .row;
+  .bx-wrapper {
+    @extend .col-md-12;
+    img {
+      max-width: 200% !important;
+      width:89% !important;
+    }
+  }
+}
