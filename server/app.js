@@ -54,7 +54,6 @@ function ioConnection(socket) {
   });
 
   socket.on('nextStepOrder', function(data){
-    console.log('Next Step');
     orders[data.id].status++;
     sockets.emit('recieveOrderData', orders);
   });
